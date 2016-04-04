@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="user" method="upgrade">
+	<name>User mail restriction</name>
+	<author>José Antonio Cidre Bardelás</author>
+	<creationDate>01/2013</creationDate>
+	<copyright>Copyright (C) 2013 Joomla Empresa Team. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>info@joomlaempresa.com</authorEmail>
+	<authorUrl>www.joomlaempresa.es</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_USER_MAILRESTRICTION_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="mailrestriction">mailrestriction.php</filename>
+		<filename>index.html</filename>
+		<filename>mailrestriction.xml</filename>
+		<filename>j3_mailrestriction.xml</filename>
+		<folder>mailrestrictionassets</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB.plg_user_mailrestriction.ini</language>
+		<language tag="en-GB">en-GB.plg_user_mailrestriction.sys.ini</language>
+		<language tag="gl-ES">gl-ES.plg_user_mailrestriction.ini</language>
+		<language tag="gl-ES">gl-ES.plg_user_mailrestriction.sys.ini</language>
+		<language tag="ca-ES">ca-ES.plg_user_mailrestriction.ini</language>
+		<language tag="ca-ES">ca-ES.plg_user_mailrestriction.sys.ini</language>
+		<language tag="es-ES">es-ES.plg_user_mailrestriction.ini</language>
+		<language tag="es-ES">es-ES.plg_user_mailrestriction.sys.ini</language>
+		<language tag="pt-PT">pt-PT.plg_user_mailrestriction.ini</language>
+		<language tag="pt-PT">pt-PT.plg_user_mailrestriction.sys.ini</language>
+		<language tag="pt-BR">pt-BR.plg_user_mailrestriction.ini</language>
+		<language tag="pt-BR">pt-BR.plg_user_mailrestriction.sys.ini</language>
+		<language tag="it-IT">it-IT.plg_user_mailrestriction.ini</language>
+		<language tag="it-IT">it-IT.plg_user_mailrestriction.sys.ini</language>
+	</languages>
+	<!-- Joomla 1.5 params -->
+	<params>
+				<param name="domains" type ="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_DOMAINS_DESC"
+					label="PLG_USER_MAILRESTRICTION_DOMAINS" />
+				<param name="emails" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_EMAILS_DESC" label="PLG_USER_MAILRESTRICTION_EMAILS" />
+				<param name="usernames" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_USERNAMES_DESC" label="PLG_USER_MAILRESTRICTION_USERNAMES" />
+	</params>
+	<!-- Joomla 2.5 params -->
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="domains" type ="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_DOMAINS_DESC"
+					label="PLG_USER_MAILRESTRICTION_DOMAINS" />
+				<field name="emails" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_EMAILS_DESC" label="PLG_USER_MAILRESTRICTION_EMAILS" />
+				<field name="usernames" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_USERNAMES_DESC" label="PLG_USER_MAILRESTRICTION_USERNAMES" />
+			</fieldset>
+		</fields>
+	</config>
+</install>
