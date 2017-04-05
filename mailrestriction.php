@@ -35,8 +35,8 @@ class plgUserMailRestriction extends JPlugin {
         // New user or admin
         if (!$isnew || $app->isAdmin())
             return;
-		$domains = explode(',', str_replace(array("\r\n", "\r", "\n"), '', $this->params->get('domains')));
-		$emails = explode(',', str_replace(array("\r\n", "\r", "\n"), '', $this->params->get('emails')));
+		$domains = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('domains')));
+		$emails = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('emails')));
         $email = trim($new['email']);
         list(,$domain) = explode('@', strtolower($email));
         if (in_array($email, $emails) || in_array($domain, $domains)) {
