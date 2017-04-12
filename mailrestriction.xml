@@ -43,6 +43,6 @@
 	</config>
 	<updateservers>
 		<!-- Note: No spaces or linebreaks allowed between the server tags -->
-		<server type="extension" name="Weblinks Update Site">https://raw.githubusercontent.com/JoomlaEmpresaSL/plg_user_mailrestriction/master/update.xml</server>
+		<server type="extension" name="User Mail Restriction Plugin">https://raw.githubusercontent.com/JoomlaEmpresaSL/plg_user_mailrestriction/master/update.xml</server>
 	</updateservers>
 </extension>
