@@ -45,14 +45,16 @@ class plgUserMailRestriction extends JPlugin {
 		list(,$domain) = explode('@', strtolower($email));
 
 		if (in_array($email, $emails) || in_array($domain, $domains)) {
-			jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
+			JFactory::getApplication()->enqueueMessage(JText::_('PLG_USER_MAILRESTRICTION_DENY'), 'error');
+			JFactory::getApplication()->redirect(JRoute::_('index.php?option=com_users&view=registration'));
 		}
 
 		$usernames = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('usernames')));
 		$username = trim($new['username']);
 
 		if(in_array($username, $usernames)) {
-			jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
+			JFactory::getApplication()->enqueueMessage(JText::_('PLG_USER_MAILRESTRICTION_DENY'), 'error');
+			JFactory::getApplication()->redirect(JRoute::_('index.php?option=com_users&view=registration'));
 		}
 
 		return true;
