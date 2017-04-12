@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<install version="1.5" type="plugin" group="user" method="upgrade">
+<extension version="3.6" type="plugin" group="user" method="upgrade">
 	<name>User mail restriction</name>
 	<author>José Antonio Cidre Bardelás</author>
 	<creationDate>01/2013</creationDate>
@@ -32,14 +32,6 @@
 		<language tag="it-IT">it-IT.plg_user_mailrestriction.ini</language>
 		<language tag="it-IT">it-IT.plg_user_mailrestriction.sys.ini</language>
 	</languages>
-	<!-- Joomla 1.5 params -->
-	<params>
-				<param name="domains" type ="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_DOMAINS_DESC"
-					label="PLG_USER_MAILRESTRICTION_DOMAINS" />
-				<param name="emails" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_EMAILS_DESC" label="PLG_USER_MAILRESTRICTION_EMAILS" />
-				<param name="usernames" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_USERNAMES_DESC" label="PLG_USER_MAILRESTRICTION_USERNAMES" />
-	</params>
-	<!-- Joomla 2.5 params -->
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
@@ -50,4 +42,8 @@
 			</fieldset>
 		</fields>
 	</config>
-</install>
+	<updateservers>
+		<!-- Note: No spaces or linebreaks allowed between the server tags -->
+		<server type="extension" name="Weblinks Update Site">https://raw.githubusercontent.com/JoomlaEmpresaSL/plg_user_mailrestriction/master/update.xml</server>
+	</updateservers>
+</extension>
