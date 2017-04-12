@@ -49,26 +49,4 @@ class plgUserMailRestriction extends JPlugin {
         }
 		return true;
 	}
-    function onBeforeStoreUser($user, $isnew) {
-        JFactory::getLanguage()->load('plg_user_mailrestriction', JPATH_ADMINISTRATOR);
-        $app = JFactory::getApplication();
-        // New user or admin
-        if (!$isnew || $app->isAdmin())
-            return;
-
-		$domains = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('domains')));
-		$emails = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('emails')));
-
-        $email = trim(JRequest::getVar('email'));
-        list(,$domain) = explode('@', strtolower($email));
-        if (in_array($email, $emails) || in_array($domain, $domains)) {
-            jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
-        }
-        $usernames = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('usernames')));
-        $username = trim(JRequest::getVar('username'));
-        if(in_array($username, $usernames)) {
-            jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
-        }
-		return true;
-    }
 }
