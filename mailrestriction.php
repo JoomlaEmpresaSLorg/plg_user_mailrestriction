@@ -29,24 +29,32 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.plugin.plugin');
 
 class plgUserMailRestriction extends JPlugin {
-    function onUserBeforeSave($user, $isnew, $new) {
-        JFactory::getLanguage()->load('plg_user_mailrestriction', JPATH_ADMINISTRATOR);
-        $app = JFactory::getApplication();
-        // New user or admin
-        if (!$isnew || $app->isAdmin())
-            return;
+	function onUserBeforeSave($user, $isnew, $new) {
+		JFactory::getLanguage()->load('plg_user_mailrestriction', JPATH_ADMINISTRATOR);
+		$app = JFactory::getApplication();
+
+		// New user or admin
+		if (!$isnew || $app->isAdmin())
+		{
+			return;
+		}
+
 		$domains = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('domains')));
 		$emails = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('emails')));
-        $email = trim($new['email']);
-        list(,$domain) = explode('@', strtolower($email));
-        if (in_array($email, $emails) || in_array($domain, $domains)) {
-            jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
-        }
-        $usernames = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('usernames')));
-        $username = trim($new['username']);
-        if(in_array($username, $usernames)) {
-            jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
-        }
+		$email = trim($new['email']);
+		list(,$domain) = explode('@', strtolower($email));
+
+		if (in_array($email, $emails) || in_array($domain, $domains)) {
+			jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
+		}
+
+		$usernames = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('usernames')));
+		$username = trim($new['username']);
+
+		if(in_array($username, $usernames)) {
+			jexit(JText::_('PLG_USER_MAILRESTRICTION_DENY'));
+		}
+
 		return true;
 	}
 }
