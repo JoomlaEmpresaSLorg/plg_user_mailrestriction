@@ -3,7 +3,7 @@
 	<update>
 		<name>User Mail Restriction Plugin</name>
 		<description>User plugin to restrict registration by e-mail addresses</description>
-		<element>plg_user_mailrestriction</element>
+		<element>mailrestriction</element>
 		<type>plugin</type>
 		<version>1.0.2</version>
 		<infourl title="User Mail Restriction Plugin">https://github.com/JoomlaEmpresaSL/plg_user_mailrestriction/releases/tag/1.0.2</infourl>
