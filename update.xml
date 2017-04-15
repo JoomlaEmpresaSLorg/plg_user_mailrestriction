@@ -6,7 +6,6 @@
 		<element>plg_user_mailrestriction</element>
 		<type>plugin</type>
 		<version>1.0.2</version>
-		<client>site</client>
 		<infourl title="User Mail Restriction Plugin">https://github.com/JoomlaEmpresaSL/plg_user_mailrestriction/releases/tag/1.0.2</infourl>
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/JoomlaEmpresaSL/plg_user_mailrestriction/releases/download/1.0.2/plg_user_mailrestriction-1.0.2.zip</downloadurl>
