@@ -4,7 +4,7 @@
  *      @package User Mail Restriction Plug-in
  *      @subpackage Content
  *      @author José A. Cidre Bardelás
- *      @copyright Copyright (C) 2013-2017 José A. Cidre Bardelás and Joomla Empresa. All rights reserved
+ *      @copyright Copyright (C) 2013-2018 José A. Cidre Bardelás and Joomla Empresa. All rights reserved
  *      @license GNU/GPL v3 or later
  *      
  *      Contact us at info@joomlaempresa.com (http://www.joomlaempresa.es)
