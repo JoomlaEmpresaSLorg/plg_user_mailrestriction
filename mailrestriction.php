@@ -41,10 +41,12 @@ class plgUserMailRestriction extends JPlugin {
 
 		$domains = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('domains')));
 		$emails = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('emails')));
+		$allowDomains = $this->params->get('allow_domains');
 		$email = trim($new['email']);
 		list(,$domain) = explode('@', strtolower($email));
 
-		if (in_array($email, $emails) || in_array($domain, $domains)) {
+		if (in_array($email, $emails) || ($allowDomains && !in_array($domain, $domains)) || (!$allowDomains && in_array($domain, $domains)))
+		{
 			JFactory::getApplication()->enqueueMessage(JText::_('PLG_USER_MAILRESTRICTION_DENY'), 'error');
 			JFactory::getApplication()->redirect(JRoute::_('index.php?option=com_users&view=registration'));
 		}
@@ -52,7 +54,8 @@ class plgUserMailRestriction extends JPlugin {
 		$usernames = explode(',', str_replace(array("\r\n", "\r", "\n", " "), '', $this->params->get('usernames')));
 		$username = trim($new['username']);
 
-		if(in_array($username, $usernames)) {
+		if(in_array($username, $usernames))
+		{
 			JFactory::getApplication()->enqueueMessage(JText::_('PLG_USER_MAILRESTRICTION_DENY'), 'error');
 			JFactory::getApplication()->redirect(JRoute::_('index.php?option=com_users&view=registration'));
 		}

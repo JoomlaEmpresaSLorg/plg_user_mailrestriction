@@ -34,6 +34,10 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
+				<field name="allow_domains" type="radio" default="0" label="PLG_USER_MAILRESTRICTION_ALLOW_DOMAINS" description="PLG_USER_MAILRESTRICTION_ALLOW_DOMAINS_DESC" class="btn-group btn-group-yesno">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
 				<field name="domains" type ="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_DOMAINS_DESC"
 					label="PLG_USER_MAILRESTRICTION_DOMAINS" />
 				<field name="emails" type="textarea" default="" rows="5" cols="40" description="PLG_USER_MAILRESTRICTION_EMAILS_DESC" label="PLG_USER_MAILRESTRICTION_EMAILS" />
